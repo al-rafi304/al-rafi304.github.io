@@ -1,3 +1,4 @@
 body {
-    @apply bg-slate-800 text-white
+    @apply bg-slate-900 text-white;
+    font-family: Arial, Helvetica, sans-serif;
 }
