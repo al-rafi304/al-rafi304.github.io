@@ -16,7 +16,7 @@ const ProjectCard = ({ title, description, technologies, thumbnail, link }) => {
                     {/* Technologies Container */}
                     <div className="flex gap-2 mt-2 flex-wrap">
                         {technologies.map((tech, index) => (
-                            <p className="border-none p-1.5 rounded-lg bg-slate-700 flex-shrink flex-grow-0 text-xs">{tech}</p>
+                            <p className="border-none p-1.5 rounded-lg bg-slate-700 flex-shrink flex-grow-0 text-sm">{tech}</p>
                         ))}
                     </div>
                 </div>
