@@ -1,18 +1,14 @@
 const ProjectCard = ({ title, description, technologies, thumbnail, link }) => {
     return (
         <>
-        <div className="flex border-none bg-slate-800 rounded-lg p-4 h-48">
+        <div className="flex border-none bg-slate-800 rounded-lg p-4 md:h-48">
             {/* Container for Image and Content */}
-            <div className="flex flex-1 gap-8">
+            <div className="flex-auto md:flex gap-8">
                 {/* Image Section */}
-                <img 
-                    src={thumbnail} 
-                    className="object-cover rounded-xl h-full w-1/2" 
-                    alt="Thumbnail" 
-                />
+                <img src={thumbnail} className="object-cover rounded-xl h-40 w-full md:h-full md:w-1/2" alt="Thumbnail" />
                 
                 {/* Content Section */}
-                <div className="flex flex-col justify-between p-2 w-4/5">
+                <div className="flex flex-col justify-between p-2 md:w-4/5">
                     <h2 className="text-xl font-bold">{title}</h2>
                     <p>{description}</p>
                     <a href={link} className="text-blue-500 hover:underline">GitHub</a>
