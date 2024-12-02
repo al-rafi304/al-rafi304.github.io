@@ -1,6 +1,7 @@
 import ProjectCard from "../components/ProjectCard"
 import SocialButton from "../components/SocialButton"
-import TechBox from "../components/TechBox"
+import TechCard from "../components/TechCard"
+import TechItem from "../components/TechItem"
 
 const Home = () => {
     const projects = [
@@ -33,8 +34,120 @@ const Home = () => {
             link: "https://github.com/al-rafi304/django-social-media"
         },
     ]
+
+    const skills = [
+        {
+            'title': 'Languages',
+            'description': 'Programming languages I am confident in and have worked with',
+            'icon': '/icons/language.svg',
+            'tech': [
+                {
+                    'name': 'Python',
+                    'icon': 'icons/python.svg'
+                },
+                {
+                    'name': 'Javascript',
+                    'icon': 'icons/javascript.svg'
+                },
+                {
+                    'name': 'C',
+                    'icon': 'icons/c.svg'
+                },
+                {
+                    'name': 'C#',
+                    'icon': 'icons/csharp.svg'
+                },
+                {
+                    'name': 'SQL',
+                    'icon': 'icons/sql.svg'
+                },
+                {
+                    'name': 'Bash',
+                    'icon': 'icons/bash.svg'
+                }
+            ]
+        },
+        {
+            'title': 'Frameworks',
+            'description': 'Backend and Frontend frameworks I have experience in',
+            'icon': '/icons/server.svg',
+            'tech': [
+                {
+                    'name': 'Node.js',
+                    'icon': 'icons/nodejs.svg'
+                },
+                {
+                    'name': 'Express.js',
+                    'icon': 'icons/expressjs.svg'
+                },
+                {
+                    'name': 'React.js',
+                    'icon': 'icons/reactjs.svg'
+                },
+                {
+                    'name': 'Django',
+                    'icon': 'icons/django.svg'
+                },
+                {
+                    'name': 'Flask',
+                    'icon': 'icons/flask.svg'
+                },
+            ]
+        },
+        {
+            'title': 'Database',
+            'description': 'Relational and Non-relational databases I\'v worked with',
+            'icon': '/icons/database.svg',
+            'tech': [
+                {
+                    'name': 'MySQL',
+                    'icon': '/icons/mysql.svg'
+                },
+                {
+                    'name': 'SQLite',
+                    'icon': '/icons/sqlite.svg'
+                },
+                {
+                    'name': 'MongoDB',
+                    'icon': '/icons/mongo.svg'
+                },
+                {
+                    'name': 'Firebase',
+                    'icon': '/icons/firebase.svg'
+                },
+            ]
+        },
+        {
+            'title': 'Tools & Tech',
+            'description': 'Technologies I frequently use and have proficiency in',
+            'icon': '/icons/tools2.svg',
+            'tech': [
+                {
+                    'name': 'Git',
+                    'icon': '/icons/git.svg'
+                },
+                {
+                    'name': 'GitHub',
+                    'icon': '/icons/github.svg'
+                },
+                {
+                    'name': 'Docker',
+                    'icon': '/icons/docker.svg'
+                },
+                {
+                    'name': 'Postman',
+                    'icon': '/icons/postman.svg'
+                },
+                {
+                    'name': 'Linux',
+                    'icon': ''
+                },
+            ]
+        }
+    ]
+
     return (
-        <>  
+        <>
             {/* Introduction */}
             <h2 className="text-4xl my-2 font-bold">Mohammad Al Rafi</h2>
             <h4 className="text-gray-400 text-base mb-4">Backend Developer • Python • Node.js • MongoDB • MySQL</h4>
@@ -70,15 +183,16 @@ const Home = () => {
                         link={project.link}
                     />
                 ))}
-            <button href="#" className="text-lg ms-4 text-left">View All Projects -&gt;</button>
+                <button href="#" className="text-lg ms-4 text-left">View All Projects -&gt;</button>
             </div>
-            
+
             {/* Skills */}
-            {/* <div>
-                <TechBox tech="Python" icon="/icons/python.svg" />
-                <TechBox tech="Node.js" icon="/icons/nodejs.svg" />
-                <TechBox tech="Python" icon="/icons/python.svg" />
-            </div> */}
+            <h3 className="text-3xl font-bold mb-4">Skills & Technologies</h3>
+            <div className="flex flex-col md:flex-row flex-wrap gap-4 justify-start ">
+                {skills.map((skill, inx) => (
+                    <TechCard title={skill.title} description={skill.description} icon={skill.icon} techs={skill.tech}/>
+                ))}
+            </div>
         </>
     )
 }
